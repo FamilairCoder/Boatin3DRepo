@@ -13,7 +13,7 @@ public class BoatMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+/*    void Update()
     {
 
 
@@ -45,5 +45,5 @@ public class BoatMovement : MonoBehaviour
         var rotz = transform.rotation.z;
         var targetrot = Quaternion.Euler(rotx, angle, rotz);
         transform.rotation = Quaternion.Lerp(transform.rotation, targetrot, turningspeed);
-    }
+    }*/
 }

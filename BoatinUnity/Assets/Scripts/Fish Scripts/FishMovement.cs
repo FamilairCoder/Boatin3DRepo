@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FishMovement : MonoBehaviour
 {
+    public GameObject player;
     public float speed, turningspeed;
     private float dirtimeleft;
     private Quaternion targetrot;
@@ -16,6 +17,10 @@ public class FishMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Vector3.Distance(transform.position, player.transform.position) > 150)
+        {
+            Destroy(gameObject);
+        }
         dirtimeleft -= Time.deltaTime;
         if (dirtimeleft <= 0)
         {

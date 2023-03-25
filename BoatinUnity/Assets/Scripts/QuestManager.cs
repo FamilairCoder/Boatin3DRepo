@@ -9,7 +9,7 @@ using Image = UnityEngine.UI.Image;
 public class QuestManager : MonoBehaviour
 {
     public GameObject questtext, questbar;
-    public static bool fishquest, questing;
+    public static bool fishquest, questing, startedfish;
     public string fishquesttext;
     public static float amount = 0, totalamount;
     // Start is called before the first frame update
@@ -21,7 +21,6 @@ public class QuestManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(questing);
         if (fishquest) 
         {
             GetComponent<TextMeshProUGUI>().text = fishquesttext;

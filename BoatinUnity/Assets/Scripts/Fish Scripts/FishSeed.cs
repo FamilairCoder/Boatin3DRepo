@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FishSeed : MonoBehaviour
 {
-    public GameObject player, smallfish, medfish, bigfish;
+    public GameObject player, fish;
     public float dist;
     public List<GameObject> fishlist;
 
@@ -32,11 +32,11 @@ public class FishSeed : MonoBehaviour
                 {
                     var posx = transform.position.x + Random.Range(-dist, dist);
                     var posz = transform.position.z + Random.Range(-dist, dist);
-                    var chance = Random.Range(1, 4);
-                    if (chance == 1) { var a = Instantiate(smallfish, new(posx, 0, posz), Quaternion.identity); fishlist.Add(a); }
-                    if (chance == 2) { var a = Instantiate(medfish, new(posx, 0, posz), Quaternion.identity); fishlist.Add(a); }
-                    if (chance == 3) { var a = Instantiate(bigfish, new(posx, 0, posz), Quaternion.identity); fishlist.Add(a); }
-                    
+                    var scalex = Random.Range(20f, 50f);
+                    var scalez = scalex + Random.Range(-10f, 10f);
+                    var a = Instantiate(fish, new(posx, 2, posz), Quaternion.identity);
+                    fishlist.Add(a);
+                    a.transform.localScale = new(scalex, 1, scalez);
                 }
                 did = true;
             }

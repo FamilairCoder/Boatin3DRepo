@@ -45,8 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  smallfish: {fileID: 4816959503132518032, guid: ada1aa2e850af7c479d2459a1fd4cd6d, type: 3}
-  medfish: {fileID: 6070478225660497305, guid: dc797aae9c2d3e34db5516e0618e70a0, type: 3}
-  bigfish: {fileID: 4435904538380794877, guid: 9b470b8511281ce4ca0df4280bd3fba5, type: 3}
+  fish: {fileID: 2655665151807076616, guid: 19702ab8ead8c974db912d00e4525d1b, type: 3}
   dist: 150
   fishlist: []

@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class DialogueChoiceBox : MonoBehaviour, IPointerClickHandler
 {
     public bool forward, backward;
-    public GameObject dialoguebox;
+    public GameObject dialoguebox, compass, compassneedle;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +36,7 @@ public class DialogueChoiceBox : MonoBehaviour, IPointerClickHandler
                     {
                         QuestManager.fishquest = true;
                         QuestManager.questing = true;
+                        QuestManager.startedfish = true;
                         QuestManager.totalamount = 3;
                         QuestManager.amount = 0;
                         box.progress = 0;
@@ -49,6 +51,7 @@ public class DialogueChoiceBox : MonoBehaviour, IPointerClickHandler
                     {
                         QuestManager.fishquest = true;
                         QuestManager.questing = true;
+                        QuestManager.startedfish = true;
                         QuestManager.totalamount = 3;
                         QuestManager.amount = 0;
                         box.progress = 0;
