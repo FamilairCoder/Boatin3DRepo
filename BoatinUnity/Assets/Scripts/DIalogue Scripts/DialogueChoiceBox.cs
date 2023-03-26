@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class DialogueChoiceBox : MonoBehaviour, IPointerClickHandler
 {
     public bool forward, backward;
-    public GameObject dialoguebox, compass, compassneedle;
+    public GameObject dialoguebox;
     // Start is called before the first frame update
     void Start()
     {
