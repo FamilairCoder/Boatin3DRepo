@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FishMovement : MonoBehaviour
 {
-    public GameObject player;
+    public GameObject player, hookedon;
     public float speed, turningspeed;
     private float dirtimeleft;
     private Quaternion targetrot;
@@ -31,11 +31,19 @@ public class FishMovement : MonoBehaviour
             dirtimeleft = Random.Range(1f, 5f);
         }
         transform.rotation = Quaternion.Lerp(transform.rotation, targetrot, turningspeed);
+        if (hookedon.gameObject != null) 
+        {
+            transform.position = hookedon.transform.position;
+            Physics.IgnoreCollision(hookedon.GetComponent<Collider>(), GetComponent<Collider>(), true);
+        }
     }
 
     private void FixedUpdate()
     {
-        GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(GetComponent<Rigidbody>().velocity, speed);
-        GetComponent<Rigidbody>().AddForce(transform.forward * speed, ForceMode.Force);
+        if (hookedon == null)
+        {
+            GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(GetComponent<Rigidbody>().velocity, speed);
+            GetComponent<Rigidbody>().AddForce(transform.forward * speed, ForceMode.Force);
+        }
     }
 }

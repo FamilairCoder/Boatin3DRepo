@@ -26,22 +26,61 @@ public class DialogueChoiceBox : MonoBehaviour, IPointerClickHandler
         var box = dialoguebox.GetComponent<DialogueBox>();
         if (forward)
         {
-            if (DialogueBox.homelessguy)
+            if (DialogueBox.quest)
             {
-                if (!QuestManager.questing)
+                QuestManager.amount = DialogueBox.questamount;
+                QuestManager.totalamount = DialogueBox.questtotal;
+                QuestManager.fishquest = true;
+                QuestManager.startedfish = true;
+            }
+
+                DialogueBox.active = false;
+            
+            /*if (DialogueBox.homelessguy)
+            {
+                if (QuestManager.didhomeless)
                 {
                     if (box.progress != 3) { box.progress += 1; }
 
                     else
                     {
-                        QuestManager.fishquest = true;
-                        QuestManager.questing = true;
-                        QuestManager.startedfish = true;
+                        QuestManager.fishquest = false;
+                        QuestManager.questing = false;
+                        QuestManager.didhomeless = true;
                         QuestManager.totalamount = 3;
                         QuestManager.amount = 0;
                         box.progress = 0;
                         DialogueBox.homelessguy = false;
                     }
+                }
+                    *//*
+
+
+                                    if (QuestManager.questing)
+                                    {
+                                        if (!QuestManager.fishquest)
+                                        {
+
+                                            QuestTexts(homelessquestfulltexts, homelessquestfullchoices1, homelessquestfullchoices2);
+                                        }
+                                        if (QuestManager.fishquest)
+                                        {
+                                            if (QuestManager.amount >= QuestManager.totalamount)
+                                            {
+                                                QuestTexts(homelessquestdone, homelessquestdonechoices1, homelessquestdonechoices1);
+
+                                            }
+
+                                            if (QuestManager.amount < QuestManager.totalamount)
+                                            {
+                                                QuestTexts(homelessquestfulltexts, homelessquestfullchoices1, homelessquestfullchoices2);
+                                            }
+                                        }
+                                    }*//*
+
+                    if (!QuestManager.questing)
+                {
+
                 }
                 else
                 {
@@ -59,13 +98,15 @@ public class DialogueChoiceBox : MonoBehaviour, IPointerClickHandler
                     }
                 }
             }
-            
+            */
+            DialogueBox.NPC.GetComponent<NPCTalkTo>().startedtalking = false;
             
         }
         if (backward)
         {
-            box.progress = 0;
-            DialogueBox.homelessguy = false;
+            /*            box.progress = 0;*/
+            DialogueBox.NPC.GetComponent<NPCTalkTo>().startedtalking = false;
+            DialogueBox.active = false;
         }
     }
 

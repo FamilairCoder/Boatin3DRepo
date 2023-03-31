@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 333625214508902678}
   - component: {fileID: 2372753577650818188}
   - component: {fileID: 5045316664582349436}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlaceInFish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,9 +108,10 @@ GameObject:
   - component: {fileID: 2655665151807076617}
   - component: {fileID: 2655665151807076630}
   - component: {fileID: 9217156567059798365}
-  m_Layer: 0
+  - component: {fileID: 5740397028245202252}
+  m_Layer: 9
   m_Name: Fish
-  m_TagString: Untagged
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,6 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  hookedon: {fileID: 0}
   speed: 5
   turningspeed: 0.01
 --- !u!54 &9217156567059798365
@@ -162,3 +164,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!65 &5740397028245202252
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2655665151807076616}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.1, z: 0.3}
+  m_Center: {x: 0, y: 0, z: 0}
